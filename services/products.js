@@ -8,13 +8,7 @@ export function getAll() {
   return JSON.parse(data);
 }
 
-export function getByModel(model) {
+export function getProductById(id) {
   const data = getAll();
-  console.log(
-    data.find((p) => {
-      console.log(p.Model);
-      console.log(model);
-      return p.Model === model;
-    })
-  );
+  return data.find((p) => p[""] === id);
 }
