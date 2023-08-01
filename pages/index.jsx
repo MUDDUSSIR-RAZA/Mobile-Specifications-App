@@ -14,10 +14,6 @@ export default function Home(props) {
         <Link href={`/${todo[""]}`}>{todo.Name}</Link>
         <br />
       </>
-
-      // <li key={todo.model}>
-      //   <p>{todo.Name}</p>
-      // </li>
     );
   });
   return (
