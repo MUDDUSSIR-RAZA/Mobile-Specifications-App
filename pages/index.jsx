@@ -1,5 +1,6 @@
 import MyHeaderFooter from "@/Components/MyHeaderFooter";
 import { getAll } from "@/services/products";
+import Link from "next/link";
 import React from "react";
 
 export default function Home(props) {
@@ -9,9 +10,14 @@ export default function Home(props) {
   }
   const todosList = todos.map((todo) => {
     return (
-      <li key={todo.model}>
-        <p>{todo.Name}</p>
-      </li>
+      <>
+        <Link href={`/${todo[""]}`}>{todo.Name}</Link>
+        <br />
+      </>
+
+      // <li key={todo.model}>
+      //   <p>{todo.Name}</p>
+      // </li>
     );
   });
   return (
