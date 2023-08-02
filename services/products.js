@@ -26,3 +26,8 @@ export function getNav() {
   });
   return navNames;
 }
+
+export function getNavProducts(brand) {
+  const data = getAll();
+  return data.filter((p) => p.Brand === brand);
+}
