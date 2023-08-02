@@ -34,3 +34,19 @@ export async function getServerSideProps() {
     },
   };
 }
+
+{
+  /* <div
+style={{
+  fontSize: "20px",
+  textAlign: "center",
+  color: "white",
+  margin: "15px 8px",
+  background: "rgb(51, 68, 84)",
+  borderRadius: "5px",
+}}
+className="demo-logo-vertical"
+>
+<h1>BRANDS</h1>
+</div> */
+}
