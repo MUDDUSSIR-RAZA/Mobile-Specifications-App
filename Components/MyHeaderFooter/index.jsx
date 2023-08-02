@@ -28,7 +28,8 @@ const App = ({ children, nav }) => {
       >
         <div
           style={{
-            fontSize: "20px",
+            fontSize: "15px",
+            padding: "6px",
             textAlign: "center",
             color: "white",
             margin: "15px 8px",
