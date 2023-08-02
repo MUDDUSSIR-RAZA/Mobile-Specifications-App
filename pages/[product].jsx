@@ -7,7 +7,7 @@ export default function Home({ data, navNames }) {
   return (
     <>
       <MyHeaderFooter nav={navNames}>
-        <div style={{ width: "800px", margin: "0 auto" }}>
+        <div style={{ width: "100%", maxWidth: "800px", margin: "0 auto" }}>
           <Descriptions bordered column={1}>
             {Object.entries(data)
               .slice(1)
