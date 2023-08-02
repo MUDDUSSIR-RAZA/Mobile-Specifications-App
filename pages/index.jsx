@@ -57,7 +57,6 @@ export default function Home(props) {
 export async function getServerSideProps() {
   const data = getAll();
   const navNames = getNav();
-  console.log(navNames);
   return {
     props: {
       title: "Hello",
