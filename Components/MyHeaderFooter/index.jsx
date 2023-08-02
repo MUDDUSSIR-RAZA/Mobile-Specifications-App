@@ -78,7 +78,7 @@ const App = ({ children, nav }) => {
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
           {nav.map((item) => (
             <Menu.Item key={item.key}>
-              <Link href={`/${item.key}`}>{item.key}</Link>
+              <Link href={`/products/${item.key}`}>{item.key}</Link>
             </Menu.Item>
           ))}
         </Menu>
