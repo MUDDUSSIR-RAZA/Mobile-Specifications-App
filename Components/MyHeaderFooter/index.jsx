@@ -41,12 +41,12 @@ const App = ({ children, nav }) => {
       <Sider
         breakpoint="lg"
         collapsedWidth="200"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
+        // onBreakpoint={(broken) => {
+        //   console.log(broken);
+        // }}
+        // onCollapse={(collapsed, type) => {
+        //   console.log(collapsed, type);
+        // }}
         style={{
           overflow: "auto",
           height: "100vh",
@@ -69,12 +69,6 @@ const App = ({ children, nav }) => {
         >
           <h1>BRANDS</h1>
         </div>
-        {/* <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["4"]}
-          items={items}
-        /> */}
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
           {nav.map((item) => (
             <Menu.Item key={item.key}>
@@ -101,21 +95,20 @@ const App = ({ children, nav }) => {
         >
           <h1>CUSTOMER DETAILS PROJECTS</h1>
         </Header>
+
         <Content
           style={{
-            margin: "70px 0px 50px 12px",
+            margin: "70px 0px 50px 12px", // Adjust the margins as needed
             overflow: "initial",
             textAlign: "center",
             padding: "5px",
             color: "#001529",
-            overflow: "auto",
             zIndex: "2000",
             position: "fixed",
-            width: "86%",
-            height: "86%",
-            overflow: "auto",
-            display: "flex",
-            flexDirection: "row",
+            top: "70px", // Set the top position to account for the fixed header's height
+            left: "200px", // Set the left position to the width of the sider
+            right: "0",
+            bottom: "0",
           }}
         >
           {children}
