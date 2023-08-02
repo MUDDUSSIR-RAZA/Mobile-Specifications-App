@@ -28,7 +28,7 @@ export default function Home(props) {
               />
             }
           >
-            <Meta title={`${todo.Name}`} description={`${todo.Price}`} />
+            <Meta title={`${todo.Name}`} description={`Rs ${todo.Price}`} />
           </Card>
         </Link>
         <br />
@@ -40,7 +40,6 @@ export default function Home(props) {
       <MyHeaderFooter>
         <div
           style={{
-            background: "#eff1f2",
             display: "flex",
             flexDirection: "row",
             flexWrap: "wrap",
@@ -63,20 +62,4 @@ export async function getServerSideProps() {
       todos: data,
     },
   };
-}
-
-{
-  /* <div
-style={{
-  fontSize: "20px",
-  textAlign: "center",
-  color: "white",
-  margin: "15px 8px",
-  background: "rgb(51, 68, 84)",
-  borderRadius: "5px",
-}}
-className="demo-logo-vertical"
->
-<h1>BRANDS</h1>
-</div> */
 }
