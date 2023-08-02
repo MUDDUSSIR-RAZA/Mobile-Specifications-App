@@ -1,46 +1,15 @@
 import React from "react";
-import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import Link from "next/link";
 const { Header, Content, Footer, Sider } = Layout;
 
-function getItem(label, key, icon, children) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  };
-}
-const items = [
-  getItem("Option 1", "1", <PieChartOutlined />),
-  getItem("Option 2", "2", <DesktopOutlined />),
-  getItem("User", "sub1", <UserOutlined />, [
-    getItem("Tom", "3"),
-    getItem("Bill", "4"),
-    getItem("Alex", "5"),
-  ]),
-  getItem("Team", "sub2", <TeamOutlined />, [
-    getItem("Team 1", "6"),
-    getItem("Team 2", "8"),
-  ]),
-  getItem("Files", "9", <FileOutlined />),
-];
 const App = ({ children, nav }) => {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
   return (
     <Layout hasSider>
       <Sider
         breakpoint="lg"
-        collapsedWidth="200"
+        width={150}
+        collapsedWidth="150"
         // onBreakpoint={(broken) => {
         //   console.log(broken);
         // }}
@@ -54,6 +23,7 @@ const App = ({ children, nav }) => {
           left: 0,
           top: 0,
           bottom: 0,
+          zIndex: "100",
         }}
       >
         <div
@@ -80,7 +50,7 @@ const App = ({ children, nav }) => {
       <Layout
         className="site-layout"
         style={{
-          marginLeft: 200,
+          marginLeft: 150,
         }}
       >
         <Header
@@ -93,20 +63,19 @@ const App = ({ children, nav }) => {
             color: "white",
           }}
         >
-          <h1>CUSTOMER DETAILS PROJECTS</h1>
+          <h1>MOBILE SPECSIFICATIONS</h1>
         </Header>
 
         <Content
           style={{
-            margin: "70px 0px 50px 12px", // Adjust the margins as needed
-            overflow: "initial",
+            margin: "30px 0px 50px 20px", // Adjust the margins as needed
+            overflow: "auto",
             textAlign: "center",
-            padding: "5px",
+            padding: "5px 5px 5px 20px",
             color: "#001529",
-            zIndex: "2000",
             position: "fixed",
             top: "70px", // Set the top position to account for the fixed header's height
-            left: "200px", // Set the left position to the width of the sider
+            left: "150px", // Set the left position to the width of the sider
             right: "0",
             bottom: "0",
           }}
