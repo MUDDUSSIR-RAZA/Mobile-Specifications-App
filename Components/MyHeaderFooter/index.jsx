@@ -8,8 +8,8 @@ const App = ({ children, nav }) => {
     <Layout hasSider>
       <Sider
         breakpoint="lg"
-        width={150}
-        collapsedWidth="150"
+        width={125}
+        collapsedWidth="125"
         // onBreakpoint={(broken) => {
         //   console.log(broken);
         // }}
@@ -50,7 +50,7 @@ const App = ({ children, nav }) => {
       <Layout
         className="site-layout"
         style={{
-          marginLeft: 150,
+          marginLeft: 58,
         }}
       >
         <Header
@@ -68,14 +68,14 @@ const App = ({ children, nav }) => {
 
         <Content
           style={{
-            margin: "30px 0px 50px 20px", // Adjust the margins as needed
+            margin: "30px 0px 50px 0px", // Adjust the margins as needed
             overflow: "auto",
             textAlign: "center",
-            padding: "5px 5px 5px 20px",
+            padding: "5px",
             color: "#001529",
             position: "fixed",
             top: "70px", // Set the top position to account for the fixed header's height
-            left: "150px", // Set the left position to the width of the sider
+            left: "130px", // Set the left position to the width of the sider
             right: "0",
             bottom: "0",
           }}
