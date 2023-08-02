@@ -4,9 +4,26 @@ import React from "react";
 import { Badge, Descriptions } from "antd";
 
 export default function Home({ data }) {
+  const nav = [
+    {
+      key: "asdaf",
+    },
+    {
+      key: "vdfsdf",
+    },
+    {
+      key: "sdf",
+    },
+    {
+      key: "fdvdsz",
+    },
+    {
+      key: "vffdz",
+    },
+  ];
   return (
     <>
-      <MyHeaderFooter>
+      <MyHeaderFooter nav={nav}>
         <div style={{ width: "800px", margin: "0 auto" }}>
           <Descriptions bordered column={1}>
             {Object.entries(data)
@@ -26,7 +43,6 @@ export default function Home({ data }) {
 export async function getServerSideProps(context) {
   const { params, req, res } = context;
   const data = getProductById(params.product);
-  console.log(data);
   return {
     props: {
       data,
