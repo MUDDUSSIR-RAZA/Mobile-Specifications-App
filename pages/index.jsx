@@ -2,16 +2,34 @@ import MyHeaderFooter from "@/Components/MyHeaderFooter";
 import { getAll } from "@/services/products";
 import Link from "next/link";
 import React from "react";
+import { Card } from "antd";
+const { Meta } = Card;
 
 export default function Home(props) {
   const { todos } = props;
   if (!todos) {
     return <div>Loading...</div>;
   }
+
   const todosList = todos.map((todo) => {
     return (
       <>
-        <Link href={`/${todo[""]}`}>{todo.Name}</Link>
+        <Link href={`/${todo[""]}`}>
+          <Card
+            hoverable
+            style={{
+              width: 240,
+            }}
+            cover={
+              <img
+                alt="example"
+                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+              />
+            }
+          >
+            <Meta title={`${todo.Name}`} description={`${todo.Price}`} />
+          </Card>
+        </Link>
         <br />
       </>
     );
@@ -19,7 +37,18 @@ export default function Home(props) {
   return (
     <>
       <MyHeaderFooter>
-        <div style={{ background: "#eff1f2" }}>{todosList}</div>
+        <div
+          style={{
+            background: "#eff1f2",
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+            alignContent: "space-between",
+          }}
+        >
+          {todosList}
+        </div>
       </MyHeaderFooter>
     </>
   );
