@@ -1,7 +1,7 @@
 import MyHeaderFooter from "@/Components/MyHeaderFooter";
 import { getNav, getProductById } from "@/services/products";
 import React from "react";
-import { Badge, Descriptions } from "antd";
+import { Descriptions } from "antd";
 
 export default function Home({ data, navNames }) {
   return (
