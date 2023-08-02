@@ -1,13 +1,23 @@
 import MyHeaderFooter from "@/Components/MyHeaderFooter";
 import { getProductById } from "@/services/products";
 import React from "react";
+import { Badge, Descriptions } from "antd";
 
 export default function Home({ data }) {
-  console.log(data);
   return (
     <>
       <MyHeaderFooter>
-        <div style={{ background: "#eff1f2" }}>{data.Name}</div>
+        <div style={{ width: "800px", margin: "0 auto" }}>
+          <Descriptions bordered column={1}>
+            {Object.entries(data)
+              .slice(1)
+              .map(([key, value]) => (
+                <Descriptions.Item key={key} label={key}>
+                  {value}
+                </Descriptions.Item>
+              ))}
+          </Descriptions>
+        </div>
       </MyHeaderFooter>
     </>
   );
