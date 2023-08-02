@@ -113,17 +113,24 @@ const App = ({ children }) => {
         </Header>
         <Content
           style={{
-            margin: "24px 1px 0",
+            margin: "70px 0px 50px 12px",
             overflow: "initial",
             textAlign: "center",
-            paddingBottom: "50px",
             paddingTop: "50px",
             color: "#001529",
             overflow: "auto",
+            zIndex: "2000",
+            position: "fixed",
+            width: "86%",
+            height: "86%",
+            overflow: "auto",
+            display: "flex",
+            flexDirection: "row",
           }}
         >
           {children}
         </Content>
+
         <Footer
           style={{
             textAlign: "center",
