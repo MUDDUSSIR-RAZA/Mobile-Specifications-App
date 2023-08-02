@@ -24,6 +24,5 @@ export function getNav() {
       navNames.push({ key: p.Brand });
     }
   });
-
   return navNames;
 }
