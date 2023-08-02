@@ -6,15 +6,15 @@ import { Card } from "antd";
 const { Meta } = Card;
 
 export default function Home(props) {
-  const { todos, navNames } = props;
-  if (!todos) {
+  const { allProducts, navNames } = props;
+  if (!allProducts) {
     return <div>Loading...</div>;
   }
 
-  const todosList = todos.map((todo) => {
+  const productList = allProducts.map((product) => {
     return (
       <>
-        <Link href={`/${todo[""]}`}>
+        <Link href={`/${product[""]}`}>
           <Card
             hoverable
             style={{
@@ -28,7 +28,10 @@ export default function Home(props) {
               />
             }
           >
-            <Meta title={`${todo.Name}`} description={`Rs ${todo.Price}`} />
+            <Meta
+              title={`${product.Name}`}
+              description={`Rs ${product.Price}`}
+            />
           </Card>
         </Link>
         <br />
@@ -47,7 +50,7 @@ export default function Home(props) {
             alignContent: "space-between",
           }}
         >
-          {todosList}
+          {productList}
         </div>
       </MyHeaderFooter>
     </>
@@ -59,8 +62,7 @@ export async function getServerSideProps() {
   const navNames = getNav();
   return {
     props: {
-      title: "Hello",
-      todos: data,
+      allProducts: data,
       navNames: navNames,
     },
   };
