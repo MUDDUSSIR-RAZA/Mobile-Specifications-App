@@ -26,20 +26,23 @@ const App = ({ children, nav }) => {
           zIndex: "100",
         }}
       >
-        <div
-          style={{
-            fontSize: "15px",
-            padding: "6px",
-            textAlign: "center",
-            color: "white",
-            margin: "15px 8px",
-            background: "rgb(51, 68, 84)",
-            borderRadius: "5px",
-          }}
-          className="demo-logo-vertical"
-        >
-          <h1>BRANDS</h1>
-        </div>
+        <Link href={"/"}>
+          <div
+            style={{
+              fontSize: "15px",
+              padding: "6px",
+              textAlign: "center",
+              color: "white",
+              margin: "15px 8px",
+              background: "rgb(51, 68, 84)",
+              borderRadius: "5px",
+            }}
+            className="demo-logo-vertical"
+          >
+            <h1>BRANDS</h1>
+          </div>
+        </Link>
+
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
           {nav.map((item) => (
             <Menu.Item key={item.key}>
