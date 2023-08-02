@@ -7,6 +7,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
+import Link from "next/link";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -31,7 +32,7 @@ const items = [
   ]),
   getItem("Files", "9", <FileOutlined />),
 ];
-const App = ({ children }) => {
+const App = ({ children, nav }) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -68,12 +69,19 @@ const App = ({ children }) => {
         >
           <h1>BRANDS</h1>
         </div>
-        <Menu
+        {/* <Menu
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["4"]}
           items={items}
-        />
+        /> */}
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
+          {nav.map((item) => (
+            <Menu.Item key={item.key} icon={item.key}>
+              <Link href={`/${item.key}`}>{item.key}</Link>
+            </Menu.Item>
+          ))}
+        </Menu>
       </Sider>
       <Layout
         className="site-layout"
