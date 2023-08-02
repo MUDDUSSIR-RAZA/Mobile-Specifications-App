@@ -2,7 +2,7 @@ import MyHeaderFooter from "@/Components/MyHeaderFooter";
 import { getAll, getNav } from "@/services/products";
 import Link from "next/link";
 import React from "react";
-import { Card } from "antd";
+import { Card, Divider } from "antd";
 const { Meta } = Card;
 
 export default function Home(props) {
@@ -18,8 +18,8 @@ export default function Home(props) {
           <Card
             hoverable
             style={{
-              width: 240,
-              margin: "5px",
+              width: 210,
+              margin: "10px 5px",
             }}
             cover={
               <img
@@ -28,6 +28,7 @@ export default function Home(props) {
               />
             }
           >
+            <Divider orientation="left">{product.Brand}</Divider>
             <Meta
               title={`${product.Name}`}
               description={`Rs ${product.Price}`}
