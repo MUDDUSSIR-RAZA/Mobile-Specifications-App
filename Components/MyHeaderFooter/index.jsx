@@ -113,10 +113,11 @@ const App = ({ children }) => {
         </Header>
         <Content
           style={{
+            border: "red solid",
             margin: "70px 0px 50px 12px",
             overflow: "initial",
             textAlign: "center",
-            paddingTop: "50px",
+            padding: "5px",
             color: "#001529",
             overflow: "auto",
             zIndex: "2000",
