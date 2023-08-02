@@ -12,3 +12,18 @@ export function getProductById(id) {
   const data = getAll();
   return data.find((p) => p[""] === id);
 }
+
+export function getNav() {
+  const data = getAll();
+  const uniqueBrandsSet = new Set();
+  const navNames = [];
+
+  data.forEach((p) => {
+    if (!uniqueBrandsSet.has(p.Brand)) {
+      uniqueBrandsSet.add(p.Brand);
+      navNames.push({ key: p.Brand });
+    }
+  });
+
+  return navNames;
+}
