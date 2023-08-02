@@ -1,12 +1,12 @@
 import MyHeaderFooter from "@/Components/MyHeaderFooter";
-import { getAll } from "@/services/products";
+import { getAll, getNav } from "@/services/products";
 import Link from "next/link";
 import React from "react";
 import { Card } from "antd";
 const { Meta } = Card;
 
 export default function Home(props) {
-  const { todos } = props;
+  const { todos, navNames } = props;
   if (!todos) {
     return <div>Loading...</div>;
   }
@@ -37,7 +37,7 @@ export default function Home(props) {
   });
   return (
     <>
-      <MyHeaderFooter>
+      <MyHeaderFooter nav={navNames}>
         <div
           style={{
             display: "flex",
@@ -56,10 +56,13 @@ export default function Home(props) {
 
 export async function getServerSideProps() {
   const data = getAll();
+  const navNames = getNav();
+  console.log(navNames);
   return {
     props: {
       title: "Hello",
       todos: data,
+      navNames: navNames,
     },
   };
 }
