@@ -91,7 +91,7 @@ const App = ({ children, nav }) => {
             position: "fixed",
             bottom: 0,
             width: "100%",
-            padding: "2px",
+            padding: "10px",
             background: "rgb(49, 82, 114)",
             color: "white",
           }}
